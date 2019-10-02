@@ -1,0 +1,921 @@
+<mjml>
+  <mj-head>
+    <!-- ############# CHESHIRE IMPACT TEMPLATE INSTRUCTIONS ############# -->
+    <!--
+    
+    Follow these steps to quickly customize the default template and prepare it for Pardot.
+
+    *** NOTE: You can skip any of these steps if the default can be used. ***
+
+
+    
+
+    STEP 11: COMPILE THE MJML INTO HTML
+
+      In the Terminal, locate to the appropriate directory, and use the following command syntax to compile the HTML:
+
+        SYNTAX: mjml NAMEOFTHISFILE.mjml -o NAMEOFTHETEMPLATE.html
+
+    STEP 12: PREPARE PARDOT REGIONS FOR THE EMAIL EDITOR
+
+      Once you've compiled the HTML, open the HTML file. Next, you need to find and replace some different text to make the Pardot regions editable, removable, and repeatable where applicable.
+
+      FIND: id="pardot-region"
+      REPLACE: pardot-region=""
+
+      FIND: alt="pardot-region"
+      REPLACE: pardot-region=""
+
+      FIND: rel="pardot-region"
+      REPLACE: pardot-region=""
+
+      FIND: class="mj-link pardot-region"
+      REPLACE: pardot-region="" class="mj-link"
+
+      FIND: class="pardot-repeat-remove"
+      REPLACE: pardot-repeatable="" pardot-removable=""
+
+    
+    STEP 13: SET DEFAULT FONT FAMILY FOR OLD VERSIONS OF OUTLOOK. DO NOT USE WEB FONTS 
+
+      Because of a quirk in MJML we need to copy and paste some code manually into the HTML document. Go to this following link and copy the code displayed on the page: https://maljenkins.github.io/cheshPublic/snippets/mso_font_snippet.txt
+
+      If the client is using a serif font, you may want to change the font stack in that code snippet to something like:
+      
+        Georgia, Times, 'Times New Roman', serif
+
+      Next, paste that code directly after the <body> tag BEFORE the first <div>
+
+
+    STEP 14: REMOVE ANY UNCESSARY COMMENTS AFTER THESE INSTRUCTIONS
+
+      MJML strips CSS and some other elements leaving empty comments in the HTML document. Remove the unnecessary comments after the last step of these instructions.
+
+    STEP 15: UPLOAD THE HTML INTO PARDOT AND TEST
+
+      Copy and paste the contents of the HTML file into the Pardot email template and test the template.
+
+    -->
+
+
+    <mj-title>%%subject%%</mj-title>
+    <!-- Set A Custom Webfont -->
+    <mj-font name="Open Sans" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" />
+    <mj-attributes>
+
+      <!-- Handle Pardot Regions -->
+      <mj-section css-class="pardot-repeat-remove" background-color="#fff" />
+      <mj-navbar-link css-class="pardot-region" />
+      `
+      <!-- Standard Classes -->
+      <mj-class name="noPad" padding="0px" />
+      <mj-class name="noPadY" padding-top="0px" padding-bottom="0px" />
+      <mj-class name="noPadX" padding-left="0px" padding-right="0px" />
+      <mj-class name="bold" font-weight="700" />
+      <mj-class name="uppercase" text-transform="uppercase" />
+
+      <mj-class name="openSans" font-family="'Open Sans',Arial,Helvetica,sans-serif" />
+
+      <!-- Set the Body and Default Section Background Colors. These Can Be Changed Using The Background Classes On An Individual Section-->
+      <mj-body background-color="#f6f6f6" width="600px" />
+      <mj-section background-color="#f6f6f6" />
+
+      <!-- Set Background Color Classes -->
+      <mj-class name="whiteBG" background-color="#fff" />
+      <mj-class name="highlightBG" background-color="#74CA00" />
+      <mj-class name="primaryBG" background-color="#6A218F" />
+      <mj-class name="secondaryBG" background-color="#6A218F" />
+
+
+      <!-- Default Styles for All Elements -->
+      <mj-all color="#000" font-family="Lucida,Arial,Helvetica,sans-serif" font-size="14px" line-height="21px" />
+
+      <!-- Custom Text Colors -->
+      <mj-class name="highlightText" color="#74CA00" />
+      <mj-class name="primaryText" color="#333D47" />
+      <mj-class name="secondaryText" color="#ffffff" />
+      <mj-class name="purpleText" color="#6A218F" />
+      <mj-class name="greyText" color="#5F6A72" />
+      <mj-class name="whiteText" color="#fff" />
+
+      <!-- Create Classes For Traditional HTML Elements -->
+      <mj-class name="h1" font-size="32px" line-height="40px" font-weight="300" />
+      <mj-class name="h2" font-size="26px" line-height="33px" font-weight="300" />
+      <mj-class name="h3" font-size="22px" line-height="28px" font-weight="300" />
+      <mj-class name="h4" font-size="18px" line-height="23px" font-weight="300" />
+      <mj-class name="h5" font-size="13px" line-height="17px" font-weight="300" />
+      <mj-class name="h6" font-size="10px" line-height="13px" font-weight="300" />
+
+
+
+
+      <!-- Image Styling *** NOTE: By Default All Images Are Set To Fluid/Responsive And Have A URL Of #, Manually Adjust Static Images and Remove Links With href="" *** -->
+      <mj-image align="center" fluid-on-mobile="true" href="#" alt="pardot-region" />
+
+      <!-- Style Intro Text -->
+      <mj-class name="introText" font-size="10px" />
+
+      <!-- Style Header Nav -->
+      <mj-navbar-link color="#74CA00" text-transform="uppercase" font-weight="300" font-size="14px" />
+
+      <!-- Button Styles -->
+      <mj-button href="#" font-weight="300" text-transform="uppercase" border-radius="2px" rel="pardot-region" css-class="styledButton" font-size="12px" />
+      <mj-class name="bigButton" font-size="18px" />
+
+      <!-- Default Divider Style -->
+      <mj-divider border-width="1px" border-style="solid" border-color="#e3e3e3" />
+
+
+    </mj-attributes>
+
+    <!-- Styles Place In Head -->
+    <mj-style>
+      a {
+        color: #74CA00;
+      }
+
+      a:link {
+        color: #74CA00;
+      }
+
+      a:visited {
+        color: #74CA00;
+      }
+    </mj-style>
+
+    <!-- Inline Styles -->
+    <mj-style inline="inline">
+      .primaryText {
+        color: #333D47;
+      }
+
+      a.primaryLink,
+      a.primaryLink span {
+        color: #333D47 !important;
+        text-decoration: none !important;
+      }
+
+      .highlightText {
+        color: #74CA00;
+      }
+
+      a.highlightLink,
+      a.highlightLink span {
+        color: #74CA00 !important;
+        text-decoration: none !important;
+      }
+
+      .secondaryText {
+        color: #6A218F;
+      }
+
+      a.secondaryLink,
+      a.secondaryLink span {
+        color: #6A218F !important;
+        text-decoration: none !important;
+      }
+
+      a.orangeLink,
+      a.orangeLink span {
+        color: #FF5000 !important;
+        text-decoration: none !important;
+      }
+
+      .orangeBG {
+        background-color: #FF5000 !important;
+      }
+
+      .greyText {
+        color: #5F6A72 !important;
+      }
+
+      a.greyLink,
+      a.greyLink span {
+        color: #5F6A72 !important;
+      }
+
+      a.whiteLink,
+      a.whiteLink span {
+        color: #fff !important;
+        text-decoration: none !important;
+      }
+
+      .whiteText {
+        color: #fff !important;
+      }
+
+      .noPad {
+        padding: 0px !important;
+      }
+
+      .noPadX {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+
+      .noPadY {
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+      }
+
+      .styledButton {
+        letter-spacing: 1px;
+        font-weight: 300;
+      }
+
+      .greyBorder {
+        border: 1px solid #e3e3e3;
+      }
+    </mj-style>
+
+    <!-- Media Queries -->
+
+    <mj-style>
+      @media (max-width:480px) {
+      td.mobileCenter > div {
+      width: 100% !important;
+      text-align: center !important;
+      }
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body>
+    <!-- Intro Text -->
+    <mj-section>
+      <mj-column>
+        <mj-text mj-class="greyText h6 openSans" css-class="mobileCenter" align="left">
+          <div id="pardot-region">Header text appears here.</div>
+        </mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text mj-class="greyText h6" css-class="mobileCenter" align="right">
+          Can't see this email? <a href="%%view_online%%" class="greyLink"><span>View Online</span></a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <!-- Email Header and Nav -->
+    <mj-section mj-class="whiteBG" padding="30px 0px 0px 0px">
+      <mj-column>
+        <mj-image href="https://www.ingevity.com/" src="https://go.ingevity.com/l/471461/2019-10-02/2r3xd/471461/57973/Ingevity_logo.png" width="150px" fluid-on-mobile="false" />
+      </mj-column>
+      <mj-column>
+        <!-- Set Navbar Link Line Height Equal To Logo Height -->
+        <mj-navbar>
+          <mj-navbar-link href="https://www.ingevity.com/" line-height="41px">
+            Products
+          </mj-navbar-link>
+          <mj-navbar-link href="https://www.ingevity.com/about/our-story/" line-height="41px">
+            About
+          </mj-navbar-link>
+          <mj-navbar-link href="https://www.ingevity.com/contact/" line-height="41px">
+            Contact
+          </mj-navbar-link>
+        </mj-navbar>
+      </mj-column>
+    </mj-section>
+
+    <!-- Full Width Image -->
+    <mj-section mj-class="noPad whiteBG">
+      <mj-column mj-class="noPad">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yd/471461/57977/tripdych_girl_drinking.jpg" mj-class="noPad" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Headline, Numbered List, Text, Button -->
+    <mj-section mj-class="whiteBG">
+      <mj-column>
+        <!-- Two Color Heading ** Use <span class="highlightText" for highlight-->
+        <mj-text mj-class="h1 primaryText" align="center">
+          <div id="pardot-region">Lorem ipsum dolor sit amet <span class="highlightText">consectetur adipiscing</span> elit roldor</div>
+        </mj-text>
+        <!-- Numbered List Table ** Start with <tr> or <th> ** -->
+        <mj-table width="70%" align="center">
+          <tr>
+            <td pardot-region="" class="highlightText" width="40px" valign="top" style="font-size:21px;font-weight:bold; padding-top:5px">1.</td>
+            <td pardot-region="" valign="top">Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</td>
+          </tr>
+          <tr>
+            <td pardot-region="" class="highlightText" width="40px" valign="top" style="font-size:21px;font-weight:bold; padding-top:5px">2.</td>
+            <td pardot-region="" valign="top">Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</td>
+          </tr>
+          <tr>
+            <td pardot-region="" class="highlightText" width="40px" valign="top" style="font-size:21px;font-weight:bold; padding-top:5px">3.</td>
+            <td pardot-region="" valign="top">Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</td>
+          </tr>
+        </mj-table>
+        <!-- Centered Text -->
+        <mj-text align="center">
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada. Nulla nec dictum velit.</div>
+        </mj-text>
+        <!-- Centered Large Button -->
+        <mj-button mj-class="whiteText highlightBG bigButton">
+          Learn More About Our Products
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Section With Primary Background Color and White Text -->
+    <mj-section mj-class="primaryBG">
+      <mj-column>
+        <!-- Heading -->
+        <mj-text align="center" mj-class="h1 whiteText noPadY">
+          <div id="pardot-region">LOREM IPSUM DOLOR SIT AMET</div>
+        </mj-text>
+        <!-- Content -->
+        <mj-text align="center" mj-class="secondaryText noPadY">
+          <div id="pardot-region">Vestibulum at fermentum diam. Integer suscipit erat quis risus tempor bibendum. Quisque vulputate est felis, tincidunt consectetur lorem tristique nec. Aenean dapibus hendrerit dolor vitae placerat. Etiam sem enim, aliquet sit amet nisl vitae, maximus ornare eros.</div>
+        </mj-text>
+        <!-- Centered Button -->
+        <mj-button mj-class="whiteText highlightBG">
+          RSVP Now
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Headline, Unordered List, Text, Button -->
+    <mj-section mj-class="whiteBG">
+      <mj-column>
+        <!-- Two Color Heading ** Use <span class="highlightText" for highlight-->
+        <mj-text mj-class="h1 primaryText" align="left">
+          <div id="pardot-region">Lorem ipsum dolor sit amet <span class="highlightText">consectetur adipiscing</span> elit roldor</div>
+        </mj-text>
+        <!-- Unordered List -->
+        <mj-text padding-top="0px">
+          <div id="pardot-region">
+            <ul>
+              <li>Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</li>
+              <li>Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</li>
+              <li>Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</li>
+            </ul>
+          </div>
+        </mj-text>
+        <!-- Centered Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada. Nulla nec dictum velit.</div>
+        </mj-text>
+        <!-- Left Aligned Large Button -->
+        <mj-button mj-class="whiteText highlightBG bigButton" align="left">
+          Learn More
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+
+
+    <!-- Section With Primary Background Color and White Text -->
+    <mj-section mj-class="primaryBG">
+      <mj-column>
+        <!-- Heading -->
+        <mj-text align="center" mj-class="h1 whiteText noPadY">
+          <div id="pardot-region">WEBINAR OR EVENT TITLE</div>
+        </mj-text>
+        <!-- Content -->
+        <mj-text align="center" mj-class="secondaryText noPadY">
+          <div id="pardot-region">Vestibulum at fermentum diam. Integer suscipit erat quis risus tempor bibendum. </div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section mj-class="primaryBG" padding="0px 10px">
+      <mj-column width="33%">
+        <!-- Centered Button -->
+        <mj-button mj-class="whiteText highlightBG" border="2px solid #74CA00" width="90%" padding="10px 0px">
+          RSVP Now
+        </mj-button>
+      </mj-column>
+      <mj-column width="33%">
+        <!-- Centered Button -->
+        <mj-button mj-class="whiteText primaryBG" border="2px solid #fff" width="90%" padding="10px 0px">
+          Add To ICal
+        </mj-button>
+      </mj-column>
+      <mj-column width="33%">
+        <!-- Centered Button -->
+        <mj-button mj-class="whiteText primaryBG" border="2px solid #fff" width="90%" padding="10px 0px">
+          Add To Google
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+
+    <!-- Left Aligned Headline, Numbered List, Text, Button -->
+    <mj-section mj-class="whiteBG">
+      <mj-column>
+        <!-- Two Color Heading ** Use <span class="highlightText" for highlight-->
+        <mj-text mj-class="h2 primaryText" align="left">
+          <div id="pardot-region">STEP BY STEP PROCESS</div>
+        </mj-text>
+        <!-- Numbered List Table ** Start with <tr> or <th> ** -->
+        <mj-table cellpadding="5px">
+          <tr>
+            <td pardot-region="" class="whiteText orangeBG" width="40px" valign="middle" style="font-size:21px;font-weight:bold; padding-top:5px; text-align:center;">1</td>
+            <td pardot-region="" valign="top" style="padding-left: 10px;">Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</td>
+          </tr>
+        </mj-table>
+        <mj-table cellpadding="5px">
+          <tr>
+            <td pardot-region="" class="whiteText orangeBG" width="40px" valign="middle" style="font-size:21px;font-weight:bold; padding-top:5px; text-align:center;">2</td>
+            <td pardot-region="" valign="top" style="padding-left: 10px;">Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</td>
+          </tr>
+        </mj-table>
+        <mj-table cellpadding="5px">
+          <tr>
+            <td pardot-region="" class="whiteText orangeBG" width="40px" valign="middle" style="font-size:21px;font-weight:bold; padding-top:5px; text-align:center;">3</td>
+            <td pardot-region="" valign="top" style="padding-left: 10px;">Donec id metus et eros porttitor ultrices. Praesent quis diam sit amet massa pellentesque auctor at ac massa.</td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+    <!-- Testimonial Primary Background Color and White Text -->
+    <mj-section mj-class="primaryBG">
+      <mj-column>
+        <!-- Heading -->
+        <mj-text align="center" mj-class="h2 whiteText">
+          <div id="pardot-region">TESTIMONIAL</div>
+        </mj-text>
+        <!-- Content -->
+        <mj-text align="center" mj-class="secondaryText">
+          <div id="pardot-region"><em>Vestibulum at fermentum diam. Integer suscipit erat quis risus tempor bibendum. Quisque vulputate est felis, tincidunt consectetur lorem tristique nec. Aenean dapibus hendrerit dolor vitae placerat. Etiam sem enim, aliquet sit amet nisl vitae, maximus ornare eros.</em></div>
+        </mj-text>
+        <mj-text align="center" mj-class="secondaryText">
+          <div id="pardot-region">&ndash; George Washington Carver</div>
+        </mj-text>
+
+      </mj-column>
+    </mj-section>
+
+    <mj-section mj-class="whiteBG">
+      <mj-column>
+        <mj-text align="left" mj-class="h2">
+          <div id="pardot-region">WHY WORK WITH US?</div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- 50/50 Why Work With Us -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="50%">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 noPadY highlightText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+      </mj-column>
+      <mj-column width="50%">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 noPadY highlightText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <!-- 50/50 Why Work With Us -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="50%">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 noPadY highlightText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+      </mj-column>
+      <mj-column width="50%">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 noPadY highlightText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+    <!-- 35/65 Section with Image Left & Article Right -->
+    <mj-section mj-class="whiteBG" padding-top="40px">
+      <mj-column width="35%">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+      <mj-column width="65%" mj-class="noPadY">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada. Nulla nec dictum velit, congue semper mauris.</div>
+        </mj-text>
+        <!-- Article Link -->
+        <mj-text mj-class="bold uppercase" color="#FF5000">
+          <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+              <font style="color: #FF5000 !important; text-decoration: none !important;">Read More</font>
+            </span></a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- 65/35 Section with Article Left & Image Right -->
+    <mj-section mj-class="whiteBG" direction="rtl">
+      <mj-column width="35%">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+      <mj-column width="65%" mj-class="noPadY">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada. Nulla nec dictum velit, congue semper mauris.</div>
+        </mj-text>
+        <!-- Article Link -->
+        <mj-text mj-class="bold uppercase">
+          <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+              <font style="color: #FF5000 !important; text-decoration: none !important;">Read More</font>
+            </span></a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- 35/65 Section with Image Left & Article Right -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="35%">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+      <mj-column width="65%" mj-class="noPadY">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada. Nulla nec dictum velit, congue semper mauris.</div>
+        </mj-text>
+        <!-- Article Link -->
+        <mj-text mj-class="bold uppercase">
+          <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+              <font style="color: #FF5000 !important; text-decoration: none !important;">Read More</font>
+            </span></a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+
+
+    <!-- Gallery TITLE -->
+    <mj-section mj-class="whiteBG">
+      <mj-column mj-class="noPadY">
+        <mj-text mj-class="h3 noPadY primaryText" align="center">
+          <div id="pardot-region">GALLERY</div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <!-- Gallery Images -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="33%" mj-class="noPadY">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+      <mj-column width="33%">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+      <mj-column width="33%">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+    </mj-section>
+    <!-- Gallery CTA -->
+    <mj-section mj-class="whiteBG">
+      <mj-column mj-class="noPadY">
+        <mj-button mj-class="whiteText highlightBG">
+          VIEW FULL GALLERY
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+
+
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Speaker Section -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="35%">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+      </mj-column>
+      <mj-column width="65%" mj-class="noPadY">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 primaryText">
+          <div id="pardot-region">SPEAKER TITLE</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada. Nulla nec dictum velit, congue semper mauris.</div>
+        </mj-text>
+        <!-- Article Link -->
+        <mj-text mj-class="bold uppercase">
+          <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+              <font style="color: #FF5000 !important; text-decoration: none !important;">Learn More About Speaker Name</font>
+            </span></a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Event TITLE -->
+    <mj-section mj-class="whiteBG">
+      <mj-column mj-class="noPadY">
+        <mj-text mj-class="h3 noPadY primaryText" align="center">
+          <div id="pardot-region">UPCOMING EVENTS</div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Event Section Image Left, Info Right -->
+    <mj-section mj-class="whiteBG">
+      <mj-group css-class="greyBorder" width="95%">
+        <mj-column width="30%" padding="10px 5px">
+          <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" padding="10px 0px 10px 5px" />
+        </mj-column>
+        <mj-column width="70%" padding="5px">
+          <!-- Article Header -->
+          <mj-text mj-class="h4 primaryText" padding-bottom="0px">
+            <div id="pardot-region">EVENT TITLE</div>
+          </mj-text>
+          <mj-text mj-class="h5 purpleText" padding-top="0px">
+            <div id="pardot-region">MONTH DATE, YEAR | 6PM - 8PM</div>
+          </mj-text>
+          <!-- Article Text -->
+          <mj-text>
+            <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada.</div>
+          </mj-text>
+          <!-- Article Link -->
+          <mj-text mj-class="bold uppercase">
+            <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+                <font style="color: #FF5000 !important; text-decoration: none !important;">View Course</font>
+              </span></a>
+          </mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <!-- Event Section Image Right, Info Left -->
+    <mj-section mj-class="whiteBG" direction="rtl">
+      <mj-group css-class="greyBorder" width="95%">
+
+        <mj-column width="70%" padding="5px">
+          <!-- Article Header -->
+          <mj-text mj-class="h4 primaryText" padding-bottom="0px">
+            <div id="pardot-region">EVENT TITLE</div>
+          </mj-text>
+          <mj-text mj-class="h5 purpleText" padding-top="0px">
+            <div id="pardot-region">MONTH DATE, YEAR | 6PM - 8PM</div>
+          </mj-text>
+          <!-- Article Text -->
+          <mj-text>
+            <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada.</div>
+          </mj-text>
+          <!-- Article Link -->
+          <mj-text mj-class="bold uppercase">
+            <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+                <font style="color: #FF5000 !important; text-decoration: none !important;">View Course</font>
+              </span></a>
+          </mj-text>
+        </mj-column>
+        <mj-column width="30%" padding="10px 5px">
+          <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" padding="10px 0px 10px 5px" />
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <!-- Event Section Image Left, Info Right -->
+    <mj-section mj-class="whiteBG">
+      <mj-group css-class="greyBorder" width="95%">
+        <mj-column width="30%" padding="10px 5px">
+          <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" padding="10px 0px 10px 5px" />
+        </mj-column>
+        <mj-column width="70%" padding="5px">
+          <!-- Article Header -->
+          <mj-text mj-class="h4 primaryText" padding-bottom="0px">
+            <div id="pardot-region">EVENT TITLE</div>
+          </mj-text>
+          <mj-text mj-class="h5 purpleText" padding-top="0px">
+            <div id="pardot-region">MONTH DATE, YEAR | 6PM - 8PM</div>
+          </mj-text>
+          <!-- Article Text -->
+          <mj-text>
+            <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci, at tincidunt mauris condimentum malesuada.</div>
+          </mj-text>
+          <!-- Article Link -->
+          <mj-text mj-class="bold uppercase">
+            <a pardot-region="" class="orangeLink" href="#" style="color: #FF5000 !important; text-decoration: none !important;"><span style="color: #FF5000 !important; text-decoration: none !important;">
+                <font style="color: #FF5000 !important; text-decoration: none !important;">View Course</font>
+              </span></a>
+          </mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <!-- Events CTA -->
+    <mj-section mj-class="whiteBG">
+      <mj-column mj-class="noPadY">
+        <mj-button mj-class="whiteText highlightBG">
+          View More Events
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+
+
+    <!-- 50/50 Section with Image Left & Article Right -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="50%">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yl/471461/57981/tripdych_pine_forest.jpg" align="center" />
+      </mj-column>
+      <mj-column width="50%">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 noPadY primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG" align="left">
+          Learn More
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- 50/50 Section with Article Left & Image Right -->
+    <mj-section mj-class="whiteBG" direction="rtl">
+      <mj-column width="50%">
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yl/471461/57981/tripdych_pine_forest.jpg" align="center" />
+      </mj-column>
+      <mj-column width="50%">
+        <!-- Article Header -->
+        <mj-text mj-class="h4 noPadY primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG" align="left">
+          Learn More
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+
+    <!-- 50/50 Section with Image on Top of Article -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="50%" mj-class="noPadY">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yl/471461/57981/tripdych_pine_forest.jpg" align="center" />
+        <!-- Article Header -->
+        <mj-text mj-class="h4 primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG" align="left">
+          Learn More
+        </mj-button>
+      </mj-column>
+      <mj-column width="50%">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yl/471461/57981/tripdych_pine_forest.jpg" align="center" />
+        <!-- Article Header -->
+        <mj-text mj-class="h4 primaryText">
+          <div id="pardot-region">LOREM IPSUMING</div>
+        </mj-text>
+        <!-- Article Text -->
+        <mj-text>
+          <div id="pardot-region">Nullam eu tempus dui, et iaculis massa. Duis efficitur turpis sed suscipit imperdiet. Ut euismod malesuada orci.</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG" align="left">
+          Learn More
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Divider Section -->
+    <mj-section mj-class="noPadX whiteBG">
+      <mj-column mj-class="noPadX">
+        <mj-divider mj-class="noPadX" />
+      </mj-column>
+    </mj-section>
+
+    <!-- 33/33/33 Section with Image on Top of Article -->
+    <mj-section mj-class="whiteBG">
+      <mj-column width="33%" mj-class="noPadY">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+        <!-- Article Text -->
+        <mj-text align="center">
+          <div id="pardot-region">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG">
+          Learn More
+        </mj-button>
+      </mj-column>
+      <mj-column width="33%">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+        <!-- Article Text -->
+        <mj-text align="center">
+          <div id="pardot-region">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG">
+          Learn More
+        </mj-button>
+      </mj-column>
+      <mj-column width="33%">
+        <!-- Aricle Image -->
+        <mj-image src="https://go.ingevity.com/l/471461/2019-10-02/2r3yj/471461/57979/tripdych_nyc.jpg" align="center" />
+        <!-- Article Text -->
+        <mj-text align="center">
+          <div id="pardot-region">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</div>
+        </mj-text>
+        <!-- Button -->
+        <mj-button mj-class="whiteText highlightBG">
+          Learn More
+        </mj-button>
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer Section -->
+    <mj-section mj-class="primaryBG" padding="40px 0px 10px 0px">
+      <!-- Left Column Logo -->
+      <mj-column vertical-align="bottom">
+        <mj-image href="https://www.ingevity.com/" src="https://go.ingevity.com/l/471461/2019-10-02/2r3xj/471461/57975/Ingevity_logo_white.png" width="150px" fluid-on-mobile="false" />
+      </mj-column>
+      <!-- Right Column Footer Text -->
+      <mj-column vertical-align="bottom">
+        <mj-text mj-class="whiteText h6 noPadY" css-class="mobileCenter" align="right">
+          <a href="#" class="whiteLink" style="color: #FFFFFF !important; text-decoration: none !important;"><span style="color: #FFFFFF !important; text-decoration: none !important;">
+              <font style="color: #FFFFFF !important; text-decoration: none !important;">%%account_address%%</font>
+            </span></a>
+        </mj-text>
+        <mj-text mj-class="whiteText h6 noPadY" css-class="mobileCenter" align="right">
+          <div id="pardot-region"><a href="%%unsubscribe%%" class="whiteLink" style="color: #FFFFFF !important; text-decoration: none !important;"><span style="color: #FFFFFF !important; text-decoration: none !important;">
+                <font style="color: #FFFFFF !important; text-decoration: none !important;">Unsubscribe</font>
+              </span></a> | © 2019 Ingevity</div>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
