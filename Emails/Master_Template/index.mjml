@@ -1,63 +1,5 @@
 <mjml>
   <mj-head>
-    <!-- ############# CHESHIRE IMPACT TEMPLATE INSTRUCTIONS ############# -->
-    <!--
-    
-    Follow these steps to quickly customize the default template and prepare it for Pardot.
-
-    *** NOTE: You can skip any of these steps if the default can be used. ***
-
-
-    
-
-    STEP 11: COMPILE THE MJML INTO HTML
-
-      In the Terminal, locate to the appropriate directory, and use the following command syntax to compile the HTML:
-
-        SYNTAX: mjml NAMEOFTHISFILE.mjml -o NAMEOFTHETEMPLATE.html
-
-    STEP 12: PREPARE PARDOT REGIONS FOR THE EMAIL EDITOR
-
-      Once you've compiled the HTML, open the HTML file. Next, you need to find and replace some different text to make the Pardot regions editable, removable, and repeatable where applicable.
-
-      FIND: id="pardot-region"
-      REPLACE: pardot-region=""
-
-      FIND: alt="pardot-region"
-      REPLACE: pardot-region=""
-
-      FIND: rel="pardot-region"
-      REPLACE: pardot-region=""
-
-      FIND: class="mj-link pardot-region"
-      REPLACE: pardot-region="" class="mj-link"
-
-      FIND: class="pardot-repeat-remove"
-      REPLACE: pardot-repeatable="" pardot-removable=""
-
-    
-    STEP 13: SET DEFAULT FONT FAMILY FOR OLD VERSIONS OF OUTLOOK. DO NOT USE WEB FONTS 
-
-      Because of a quirk in MJML we need to copy and paste some code manually into the HTML document. Go to this following link and copy the code displayed on the page: https://maljenkins.github.io/cheshPublic/snippets/mso_font_snippet.txt
-
-      If the client is using a serif font, you may want to change the font stack in that code snippet to something like:
-      
-        Georgia, Times, 'Times New Roman', serif
-
-      Next, paste that code directly after the <body> tag BEFORE the first <div>
-
-
-    STEP 14: REMOVE ANY UNCESSARY COMMENTS AFTER THESE INSTRUCTIONS
-
-      MJML strips CSS and some other elements leaving empty comments in the HTML document. Remove the unnecessary comments after the last step of these instructions.
-
-    STEP 15: UPLOAD THE HTML INTO PARDOT AND TEST
-
-      Copy and paste the contents of the HTML file into the Pardot email template and test the template.
-
-    -->
-
-
     <mj-title>%%subject%%</mj-title>
     <!-- Set A Custom Webfont -->
     <mj-font name="Open Sans" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" />
@@ -110,7 +52,7 @@
 
 
       <!-- Image Styling *** NOTE: By Default All Images Are Set To Fluid/Responsive And Have A URL Of #, Manually Adjust Static Images and Remove Links With href="" *** -->
-      <mj-image align="center" fluid-on-mobile="true" href="#" alt="pardot-region" />
+      <mj-image align="center" fluid-on-mobile="true" href="https://www.ingevity.com/" alt="pardot-region" />
 
       <!-- Style Intro Text -->
       <mj-class name="introText" font-size="10px" />
@@ -119,7 +61,7 @@
       <mj-navbar-link color="#74CA00" text-transform="uppercase" font-weight="300" font-size="14px" />
 
       <!-- Button Styles -->
-      <mj-button href="#" font-weight="300" text-transform="uppercase" border-radius="2px" rel="pardot-region" css-class="styledButton" font-size="12px" />
+      <mj-button href="https://www.ingevity.com/" font-weight="300" text-transform="uppercase" border-radius="2px" rel="pardot-region" css-class="styledButton" font-size="12px" />
       <mj-class name="bigButton" font-size="18px" />
 
       <!-- Default Divider Style -->
